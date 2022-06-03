@@ -532,7 +532,8 @@ app.get("/groups/members/:id", async (req,res) => {
 });
 
 app.get("*", (req, res) => {
-  res.sendFile('index.html');
+  const index = path.join(__dirname, 'build', 'index.html');
+  res.sendFile(index);
 })
 
 app.listen(PORT, () => {
