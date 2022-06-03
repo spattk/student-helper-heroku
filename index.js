@@ -17,7 +17,7 @@ app.use(express.json()); //req.body
 
 if(process.env.NODE_ENV === "production"){
   //serve static content
-  app.use(express.static('build'));
+  app.use(express.static('client/build'));
 }
 
 //ROUTES//
@@ -533,9 +533,9 @@ app.get("/groups/members/:id", async (req,res) => {
 
 app.get("*", (req, res) => {
   console.log("inside * GET");
-  console.log(path.join(__dirname, 'build', 'index.html'));
+  console.log(path.join(__dirname, 'client', 'build', 'index.html'));
   console.log(process.env.PWD);
-  const index = path.join(__dirname, 'build', 'index.html');
+  const index = path.join(__dirname, 'client', 'build', 'index.html');
   res.sendFile(index);
 })
 
