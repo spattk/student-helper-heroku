@@ -7,7 +7,7 @@ const RecentProjects = (props) => {
 
   const getRecentProjects = async () => {
     try {
-      const response = await fetch("http://localhost:5001/projects");
+      const response = await fetch(`/projects`);
       const jsonData = await response.json();
       setRecentProjects(jsonData);
     } catch (err) {
