@@ -532,9 +532,6 @@ app.get("/groups/members/:id", async (req,res) => {
 });
 
 app.get("*", (req, res) => {
-  console.log("inside * GET");
-  console.log(path.join(__dirname, 'client', 'build', 'index.html'));
-  console.log(process.env.PWD);
   const index = path.join(__dirname, 'client', 'build', 'index.html');
   res.sendFile(index);
 })
